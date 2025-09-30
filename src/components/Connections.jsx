@@ -19,7 +19,7 @@ const Connections = () => {
   };
 
   useEffect(() => {
-    fetchConnections();
+    !connections && fetchConnections();
   }, []);
 
   if (!connections) return;
@@ -27,7 +27,7 @@ const Connections = () => {
   if (connections.length === 0)
     return (
       <div className="flex justify-center my-30">
-        <h1 className="text-bold text-3xl text-white">Connections</h1>
+        <h1 className="text-bold text-3xl text-white">No Connections Yet!</h1>
       </div>
     );
 

@@ -21,19 +21,23 @@ const Feed = () => {
   };
 
   useEffect(() => {
-    if (!feed) {
-      fetchFeed();
-    }
+    // if (!feed) {
+    //   fetchFeed();
+    // }
+    fetchFeed();
   }, []);
 
   if (!feed) return;
 
-  if (feed.length === 0)
+  console.log("feed", feed);
+
+  if (feed.length === 0) {
     return (
       <div className="flex justify-center my-30">
         <h1 className="text-bold text-3xl text-white">No New Users Found!</h1>
       </div>
     );
+  }
 
   return (
     <div className="flex justify-center my-8">
